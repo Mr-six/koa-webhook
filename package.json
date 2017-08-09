@@ -1,0 +1,13 @@
+{
+  "name": "koa-webhook",
+  "version": "0.0.1",
+  "description": "koa webhook git-webhook",
+  "main": "index.js",
+  "author": "mrsix",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.3.0",
+    "koa-bodyparser": "^4.2.0",
+    "node-github-webhook": "^1.0.7"
+  }
+}
