@@ -4,10 +4,11 @@
   "description": "koa webhook git-webhook",
   "main": "index.js",
   "author": "mrsix",
+  "scripts": {
+    "start": "node exmple.js"
+  },
   "license": "MIT",
   "dependencies": {
     "koa": "^2.3.0",
-    "koa-bodyparser": "^4.2.0",
-    "node-github-webhook": "^1.0.7"
   }
 }

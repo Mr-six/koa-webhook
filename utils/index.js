@@ -3,7 +3,6 @@
  * @param  {obj} ctx koa 
  * @return {Promise}  返回解析后的Promise对象
  */
-
 function parsePostData( ctx ) {
   return new Promise((resolve, reject) => {
     try {
@@ -12,8 +11,10 @@ function parsePostData( ctx ) {
         postdata += data
       })
       ctx.req.addListener("end",function(){
-        // let parseData = parseQueryStr( postdata )
-        let parseData = postdata
+        let parseData = {
+          buff: new Buffer(postdata),
+          data: JSON.parse(postdata)
+        }
         resolve( parseData )
       })
     } catch ( err ) {

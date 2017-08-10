@@ -4,7 +4,7 @@ coding 配置完成后会post一段测试数据
 { zen: 'Coding！ 让开发更简单', token: 'mrsixcoding' }
 ```
 
-doding webhook header
+coding webhook header
 
 ```
 { 'user-agent': 'Coding.net Hook',
