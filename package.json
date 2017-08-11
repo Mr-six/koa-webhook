@@ -1,14 +1,30 @@
 {
   "name": "koa-webhook",
   "version": "0.0.1",
-  "description": "koa webhook git-webhook",
+  "description": "koa middleware for webhooks",
   "main": "index.js",
-  "author": "mrsix",
-  "scripts": {
-    "start": "node exmple.js"
+  "author": "mrsix(582497915@qq.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mr-six/koa-webhook.git"
   },
+  "scripts": {
+    "start": "node exmple.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "koa-webhook",
+    "Webhooks",
+    "Node.js"
+  ],
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mr-six/koa-webhook/issues"
+  },
   "dependencies": {
+  },
+  "devDependencies": {
     "koa": "^2.3.0",
+    "koa-router": "^7.2.1"
   }
 }

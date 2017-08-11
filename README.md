@@ -1,3 +1,69 @@
+Koa.js middleware for processing GitHub Webhooks
+
+This library is a small middleware for Koa.js web servers that handles all the logic of receiving and verifying webhook requests from website.
+为ctx增加webhook属性<br>
+方便平台判断
+
+
+## Example
+```
+const Koa = require('koa')
+const app = new Koa()
+
+const router = require('koa-router')()
+
+const config = require('./config')  // 配置文件
+
+const hook = require('./index')  // koa-webhook
+
+// hook('token')  参数接受token值 可为字符串或者数组
+
+router.post('/webhook',hook('mrsixcoding'), (ctx) => {
+  let myhook = ctx.webhook
+  console.dir(myhook)
+  ctx.type = 'json'
+  ctx.body = {"ok": true}
+})
+
+app
+  .use(router.routes())
+  .use(router.allowedMethods())
+
+app.listen(config.port, () => {
+  console.log('server start at http://localhost:' + config.port)
+})
+```
+### ctx.webhook 示例：
+```
+# github
+{ 
+  platform: 'github',
+  event: 'push',
+  repository: 'test-webhook1',
+  errToken: true
+}
+# coding
+{
+  platform: 'codding',
+  event: 'push',
+  repository: 'testwebhook',
+  errToken: false
+}
+# doding test
+{ 
+  platform: 'codding',
+  event: 'test',
+  repository: 'unknow',
+  errToken: false
+}
+# dockerHub
+{ platform: 'dockerHub',
+  event: 'unknow',
+  repository: 'api',
+  errToken: false }
+```
+
+
 coding 配置完成后会post一段测试数据
 
 ```
